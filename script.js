@@ -38,6 +38,8 @@ function addR()
 
     currGrid.appendChild(addRow);
     numRows++;
+
+    console.log("Add Row has been pressed successfully.")
 }
 //Adds a column
 function addC() 
@@ -69,6 +71,9 @@ function addC()
         currNumOfRows++;
     }
     numCols++;
+
+    console.log("Add Column has been pressed successfully.")
+
 }
 
 //Removes a row
@@ -87,6 +92,9 @@ function removeR()
         numCols = 0;
         numRows = 0;
     }
+
+    console.log("Remove Row has been pressed successfully.")
+
 }
 //Remove a column
 function removeC() 
@@ -104,6 +112,9 @@ function removeC()
     }
 
     numCols--;
+
+    console.log("Remove Column has been pressed successfully.")
+
 }
 //sets global var for selected color
 function selected() 
@@ -116,12 +127,14 @@ function fill()
 {
     // Gets current grid and goes through all boxes and fills them with selected color
     currGrid = document.querySelectorAll('td').forEach(td => td.style.backgroundColor = document.getElementById("selectedID").value);
+    console.log("Fill has been used successfully.")
 }
 
 function clearAll() 
 {
     // Gets current grid and goes through all boxed and fills them with white (in other words resetting them)
     document.querySelectorAll('td').forEach(td => td.style.backgroundColor = "white");
+    console.log("Clear has been used successfully.")
 }
 
 function fillU() 
@@ -134,4 +147,5 @@ function fillU()
             td.style.backgroundColor = document.getElementById("selectedID").value;
         }
     });
+    console.log("Fill Uncolored has been used successfully.")
 }
