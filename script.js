@@ -78,21 +78,22 @@ function addC()
 //Removes a row
 function removeR() 
 {
-    // Gets table element from the DOM
-    let currGrid = document.getElementById("grid");
-
-    // Delete last inserted row
-    currGrid.deleteRow(numRows-1);
-
-    
-
-    if (numRows < 1)
+    if (numRows > 0)
     {
-        numCols = 0;
-        numRows = 0;
-    }
-    numRows--;
+        // Gets table element from the DOM
+        let currGrid = document.getElementById("grid");
 
+        // Delete last inserted row
+        currGrid.deleteRow(numRows-1); 
+
+        if (numRows < 1)
+        {
+            numCols = 0;
+            numRows = 0;
+        }
+        
+        numRows--;
+    }
     console.log("Remove Row has been pressed successfully.")
 
 }
@@ -100,20 +101,22 @@ function removeR()
 //Remove a column
 function removeC() 
 {
-    // Gets all rows from the grid
-    let currNumOfRowsInGrid = document.querySelectorAll("tr");
-
-    let currNumOfRows = 0;
-
-    for (let i = 0; i < numRows; i++)
+    if (numCols > 1)
     {
-        currNumOfRowsInGrid[currNumOfRows].removeChild(currNumOfRowsInGrid[currNumOfRows].lastChild);
-        // amount of rows deleted
-        currNumOfRows++;
+        // Gets all rows from the grid
+        let currNumOfRowsInGrid = document.querySelectorAll("tr");
+
+        let currNumOfRows = 0;
+
+        for (let i = 0; i < numRows; i++)
+        {
+            currNumOfRowsInGrid[currNumOfRows].removeChild(currNumOfRowsInGrid[currNumOfRows].lastChild);
+            // amount of rows deleted
+            currNumOfRows++;
+        }
+
+        numCols--;
     }
-
-    numCols--;
-
     console.log("Remove Column has been pressed successfully.")
 
 }
