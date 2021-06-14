@@ -11,8 +11,7 @@ function addR()
     // Stores row that will be appended to table element
     let addRow = document.createElement("tr");
 
-    // Assuming no table(grid) has been created (considering the variables 
-    // above I just made it a condition)
+    // if the number of rows and columns are empty 
     if (numRows === 0 && numCols === 0)
     {
         var box = document.createElement("td");
@@ -25,7 +24,7 @@ function addR()
     }
     else
     {
-        for (let i = 0; i < numCols; i++)
+        for (let i = 0; i < numCols; ++i)
         {
             var box = document.createElement("td");
             box.onclick = function()
@@ -85,17 +84,19 @@ function removeR()
     // Delete last inserted row
     currGrid.deleteRow(numRows-1);
 
-    numRows--;
+    
 
     if (numRows < 1)
     {
         numCols = 0;
         numRows = 0;
     }
+    numRows--;
 
     console.log("Remove Row has been pressed successfully.")
 
 }
+
 //Remove a column
 function removeC() 
 {
