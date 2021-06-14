@@ -1,1 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title> Grid </title>
+    <link rel= "stylesheet" href="styles.css">
+</head>
+<body>
+    <button onclick="addRow()">Add Row</button>
+    <button onclick="addCol()">Add Col</button>
+    <button onclick="removeRow()">Remove Row</button>
+    <button onclick="removeCol()">Remove Col</button>
+    <button onclick="fillUncolor()">Fill All Uncolored</button>
+    <button onclick="fillAll()">Fill All</button>
+    <button onclick="clearAll()">Clear</button>
+    <select onchange="selectedID()" id="selectedID">
+        <option value="SELECT">SELECT</option>
+        <option value="Red">Red</option>
+        <option value="Blue">Blue</option>
+        <option value="Green">Green</option>
+        <option value="Yellow">Yellow</option>
+    </select>
+    <table id="grid">
+    </table>
+    <script src="script.js"></script>
+</body>
+</html>
 
