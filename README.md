@@ -2,8 +2,8 @@
 https://github.com/Avoracity/Assignment-3-webdev/edit/main/README.md
 
 # Author :
-**Name : Michael Alvarez **
-**GitHub Username : Avoracity **
+**Name : Michael Alvarez**
+**GitHub Username : Avoracity**
 
 # Goal :
 
