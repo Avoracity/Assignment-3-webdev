@@ -80,17 +80,8 @@ function removeR()
 {
     if (numRows > 0)
     {
-        // Gets table element from the DOM
-        let currGrid = document.getElementById("grid");
-
-        // Delete last inserted row
-        currGrid.deleteRow(numRows-1); 
-
-        if (numRows < 1)
-        {
-            numCols = 0;
-            numRows = 0;
-        }
+         // Deleting a row on click
+        document.getElementById("grid").deleteRow(0);
         
         numRows--;
     }
