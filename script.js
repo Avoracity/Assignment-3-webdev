@@ -11,8 +11,7 @@ function addR()
     // Stores row that will be appended to table element
     let addRow = document.createElement("tr");
 
-    // Assuming no table(grid) has been created (considering the variables 
-    // above I just made it a condition)
+    // if the number of rows and columns are empty 
     if (numRows === 0 && numCols === 0)
     {
         var box = document.createElement("td");
@@ -25,7 +24,7 @@ function addR()
     }
     else
     {
-        for (let i = 0; i < numCols; i++)
+        for (let i = 0; i < numCols; ++i)
         {
             var box = document.createElement("td");
             box.onclick = function()
@@ -79,40 +78,36 @@ function addC()
 //Removes a row
 function removeR() 
 {
-    // Gets table element from the DOM
-    let currGrid = document.getElementById("grid");
-
-    // Delete last inserted row
-    currGrid.deleteRow(numRows-1);
-
-    numRows--;
-
-    if (numRows < 1)
+    if (numRows > 0)
     {
-        numCols = 0;
-        numRows = 0;
+         // Deleting a row on click
+        document.getElementById("grid").deleteRow(0);
+        
+        numRows--;
     }
-
     console.log("Remove Row has been pressed successfully.")
 
 }
+
 //Remove a column
 function removeC() 
 {
-    // Gets all rows from the grid
-    let currNumOfRowsInGrid = document.querySelectorAll("tr");
-
-    let currNumOfRows = 0;
-
-    for (let i = 0; i < numRows; i++)
+    if (numCols > 1)
     {
-        currNumOfRowsInGrid[currNumOfRows].removeChild(currNumOfRowsInGrid[currNumOfRows].lastChild);
-        // amount of rows deleted
-        currNumOfRows++;
+        // Gets all rows from the grid
+        let currNumOfRowsInGrid = document.querySelectorAll("tr");
+
+        let currNumOfRows = 0;
+
+        for (let i = 0; i < numRows; i++)
+        {
+            currNumOfRowsInGrid[currNumOfRows].removeChild(currNumOfRowsInGrid[currNumOfRows].lastChild);
+            // amount of rows deleted
+            currNumOfRows++;
+        }
+
+        numCols--;
     }
-
-    numCols--;
-
     console.log("Remove Column has been pressed successfully.")
 
 }
